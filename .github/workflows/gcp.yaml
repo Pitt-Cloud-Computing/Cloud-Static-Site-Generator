@@ -14,7 +14,6 @@ on:
 permissions:
      contents: 'read'
      id-token: 'write'
-
 jobs:
   deploy:
     runs-on: ubuntu-latest  # Specifies the runner environment.
@@ -22,7 +21,7 @@ jobs:
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v2  # Checks out your repository under $GITHUB_WORKSPACE, so your workflow can access it.
-  - id: 'auth'
+
     - name: Authenticate to Google Cloud
       uses: google-github-actions/auth@v2  # Authenticates to Google Cloud with the Workload Identity Federation.
       with:
