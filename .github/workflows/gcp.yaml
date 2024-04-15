@@ -4,8 +4,6 @@
 #     workload_identity_provider: 'projects/572907231686/locations/global/workloadIdentityPools/github/providers/my-repo' # "projects/123456789/locations/global/workloadIdentityPools/github/providers/my-repo"
 
 
-
-
 name: Deploy to Google Cloud Storage
 
 on:
