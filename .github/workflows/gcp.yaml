@@ -30,37 +30,3 @@ jobs:
         path: 'public'
         destination: 'cloud-static-site'
         parent: false
-      # This step uploads each of the specified files to the designated paths in your Google Cloud Storage bucket.
-
-# name: Deploy to Google Cloud Storage
-#
-# on:
-#   push:
-#     branches:
-#       - main
-#
-# permissions:
-#      contents: 'read'
-#      id-token: 'write'
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest  # Specifies the runner environment.
-#
-#     steps:
-#     - name: Checkout Repo
-#       uses: actions/checkout@v2  # Checks out your repository under $GITHUB_WORKSPACE, so your workflow can access it.
-#
-#     - name: Authenticate to Google Cloud
-#       uses: google-github-actions/auth@v2  # Authenticates to Google Cloud with the Workload Identity Federation.
-#       with:
-#         project_id: 'astral-archive-416420'  # Your Google Cloud project ID.
-#         workload_identity_provider: 'projects/572907231686/locations/global/workloadIdentityPools/github/providers/my-repo'
-#
-#       # upload files to GCS
-#       - id: 'upload-static-files'
-#         uses: 'google-github-actions/upload-cloud-storage@v1'
-#         with:
-#           path: 'public'
-#           destination: 'cloud-static-site'
-#           parent: false
-#       # This step uploads each of the specified files to the designated paths in your Google Cloud Storage bucket.
