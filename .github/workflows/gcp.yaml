@@ -3,7 +3,7 @@ name: Deploy to Google Cloud Storage
 on:
   push:
     branches:
-      - main  
+      - main
 
 permissions:
      contents: 'read'
@@ -22,10 +22,11 @@ jobs:
         project_id: 'astral-archive-416420'  # Your Google Cloud project ID.
         workload_identity_provider: 'projects/572907231686/locations/global/workloadIdentityPools/github/providers/my-repo'
 
-    - name: Upload to Google Cloud Storage
-      run: |
-        gsutil cp ./404.html gs://cloud-static-site/404.html
-        gsutil cp ./main.css gs://cloud-static-site/main.css
-        gsutil cp ./main.html gs://cloud-static-site/main.html
-        gsutil cp ./main.js gs://cloud-static-site/main.js
+      # upload files to GCS
+      - id: 'upload-static-files'
+        uses: 'google-github-actions/upload-cloud-storage@v1'
+        with:
+          path: 'public'
+          destination: 'cloud-static-site'
+          parent: false
       # This step uploads each of the specified files to the designated paths in your Google Cloud Storage bucket.
