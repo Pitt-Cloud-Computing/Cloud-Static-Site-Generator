@@ -22,6 +22,7 @@ jobs:
       with:
         project_id: 'astral-archive-416420'  # Your Google Cloud project ID.
         workload_identity_provider: 'projects/572907231686/locations/global/workloadIdentityPools/github/providers/my-repo'
+        service_account: 'gabby-assignment@astral-archive-416420.iam.gserviceaccount.com'
 
     - id: 'upload-static-files'  # Correctly aligned with other steps
       uses: 'google-github-actions/upload-cloud-storage@v1'
